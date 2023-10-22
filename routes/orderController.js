@@ -110,3 +110,22 @@ exports.IndexUpdateController = (req, res) => {
     console.log(error);
   }
 };
+
+exports.GetAllCustomers = (req, res) => {
+  try {
+    const getOrders = `SELECT id FROM customers`;
+    dbConfig.query(getOrders, (err, result) => {
+      if (err) throw err;
+      res.status(200).json({ data: result });
+    });
+  } catch (error) {}
+};
+exports.GetAllPackages = (req, res) => {
+  try {
+    const getOrders = `SELECT id FROM packages`;
+    dbConfig.query(getOrders, (err, result) => {
+      if (err) throw err;
+      res.status(200).json({ data: result });
+    });
+  } catch (error) {}
+};

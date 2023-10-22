@@ -10,5 +10,5 @@ app.use("/delivery", deliveryRoutes);
 app.use("/order", orderRoutes);
 
 app.listen(3001, () => {
-
+  console.log(`Server is running on port ${3001}`);
 });
