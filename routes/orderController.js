@@ -45,20 +45,20 @@ exports.IndexPostController = (req, res) => {
         telephone_number,
         departure_date
       )
-      VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
     dbConfig.query(
       insertQuery,
       [
-        dataFromAPI.package_id,
+        dataFromAPI.packageId,
         dataFromAPI.branch_pickup,
         dataFromAPI.vehicle,
         dataFromAPI.date,
         dataFromAPI.destination,
-        dataFromAPI.order_id,
+        dataFromAPI.orderId,
         dataFromAPI.status,
         dataFromAPI.estimated_date,
-        dataFromAPI.customer_id,
+        dataFromAPI.customerId,
         dataFromAPI.telephone_number,
         dataFromAPI.departure_date,
       ],
