@@ -33,6 +33,7 @@ exports.IndexPostController = (req, res) => {
   try {
     const insertQuery = `
       INSERT INTO delivery (
+        package_id,
         branch_pickup,
         vehicle,
         date,
@@ -44,11 +45,12 @@ exports.IndexPostController = (req, res) => {
         telephone_number,
         departure_date
       )
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
     dbConfig.query(
       insertQuery,
       [
+        dataFromAPI.package_id,
         dataFromAPI.branch_pickup,
         dataFromAPI.vehicle,
         dataFromAPI.date,
