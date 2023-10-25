@@ -111,7 +111,6 @@ exports.IndexPostController = (req, res) => {
           // Save order_detail table
           dbConfig.query(insertQuery, params, (err, result) => {
             if (err) {
-              console.log(err);
               return res.status(500).json({
                 error: "Internal server error Save order_detail table",
               });
